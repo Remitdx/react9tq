@@ -1,7 +1,11 @@
+import { Button } from './Button'
+import { Score } from './Score'
+import { Timer } from './Timer'
+
 export function ScoreBoardArea() {
-  return <div className="d-flex justify-content-around">
-    <div>Timer</div>
-    <div>Pseudo</div>
-    <div>Points</div>
+  return <div className="score-board-area d-flex justify-content-around align-items-baseline">
+    <Timer></Timer>
+    <Button></Button>
+    <Score></Score>
   </div>
 }

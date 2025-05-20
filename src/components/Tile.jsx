@@ -1,5 +1,3 @@
 export function Tile() {
-  return <>
-    "TILE"
-  </>
+  return <div className="tile"></div>
 }
