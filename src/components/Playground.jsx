@@ -19,15 +19,6 @@ export function Playground() {
         <Tile></Tile>
         <Tile></Tile>
         <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
-        <Tile></Tile>
       </div>
   </>
 }

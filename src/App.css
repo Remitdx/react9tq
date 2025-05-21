@@ -7,17 +7,27 @@
 
 .playground {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   background-color: rgb(176, 209, 238);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 1rem;
 
   .tile {
+    position: relative;
     height: 12vh;
     aspect-ratio: 1/1;
     background-color: rgb(91, 91, 91);
     border-radius: 50%;
     box-shadow: 2px 2px 0 0 rgb(45, 45, 45);
+
+    .mole {
+      position: absolute;
+      top: calc(50% - 5vh);
+      left: calc(50% - 5vh);
+      height: 10vh;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
   }
 }
