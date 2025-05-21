@@ -6,11 +6,15 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-export function Tile() {
+export function Tile({id}) {
 
   const character = CHARACTERS[getRandomInt(11)]
 
-  return <div className="tile">
-    <Mole character={character}></Mole>
-  </div>
+  if (id < 5 ) {
+    return <div id={id} className="tile">
+      <Mole character={character}></Mole>
+    </div>
+  } else {
+    return <div id={id} className="tile"></div>
+  }
 }

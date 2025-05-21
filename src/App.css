@@ -1,3 +1,8 @@
+@keyframes grow-and-hide {
+  0%, 100% {scale: 0; }
+  50% {scale: 1.4; }
+}
+
 .score-board-area {
   background-color: rgb(185, 238, 176);
   padding: 1rem;
@@ -7,7 +12,7 @@
 
 .playground {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   background-color: rgb(176, 209, 238);
   padding: 1.5rem;
@@ -22,12 +27,15 @@
     box-shadow: 2px 2px 0 0 rgb(45, 45, 45);
 
     .mole {
+      scale: 0;
       position: absolute;
       top: calc(50% - 5vh);
       left: calc(50% - 5vh);
       height: 10vh;
       aspect-ratio: 1/1;
       border-radius: 50%;
+
+      animation: grow-and-hide 3s forwards;
     }
   }
 }

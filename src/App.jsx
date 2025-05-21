@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { Playground } from './components/Playground'
 import { ScoreBoardArea } from './components/ScoreBoardArea'
