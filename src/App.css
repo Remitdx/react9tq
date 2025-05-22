@@ -3,6 +3,20 @@
   50% {scale: 1.4; }
 }
 
+#root {
+  width: 100%;
+}
+
+.rules {
+  min-height: calc(48vh + 7.5rem);
+  background-color: rgb(176, 209, 238);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .score-board-area {
   background-color: rgb(185, 238, 176);
   padding: 1rem;
@@ -12,13 +26,14 @@
 
 .playground {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   background-color: rgb(176, 209, 238);
   padding: 1.5rem;
   border-radius: 1rem;
 
   .tile {
+    margin: 0 auto;
     position: relative;
     height: 12vh;
     aspect-ratio: 1/1;
@@ -35,7 +50,7 @@
       aspect-ratio: 1/1;
       border-radius: 50%;
 
-      animation: grow-and-hide 3s forwards;
+      animation: grow-and-hide 5s forwards;
     }
   }
 }

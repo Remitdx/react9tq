@@ -1,15 +1,19 @@
+import { Rules } from './Rules'
 import { Tile } from './Tile'
 
-export function Playground() {
-  return <div className="playground">
-    <Tile id={"1"}></Tile>
-    <Tile id={"2"}></Tile>
-    <Tile id={"3"}></Tile>
-    <Tile id={"4"}></Tile>
-    <Tile id={"5"}></Tile>
-    <Tile id={"6"}></Tile>
-    <Tile id={"7"}></Tile>
-    <Tile id={"8"}></Tile>
-    <Tile id={"9"}></Tile>
-  </div>
+export function Playground({moles, gameDatas, gameStarted, onClick}) {
+
+  if (gameStarted)
+    return <div className="playground">
+      {moles.map((_,i) =>
+        <Tile
+          mole={moles[i]}
+          key={i}
+          onClick={onClick}
+          gameDatas={gameDatas}>
+        </Tile>)}
+    </div>
+  else {
+    return <Rules/>
+  }
 }
