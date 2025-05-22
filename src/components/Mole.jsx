@@ -1,6 +1,18 @@
-export function Mole({character, onClick}) {
+export function Mole({timer, character, onClick, onAnimationEnd}) {
 
-  return <div>
-    <img src={`src/assets/${character}.jpg`} alt={character} className='mole' onClick={onClick}/>
-  </div>
+  let classes = ""
+  if (timer > 20) {
+    classes='mole slow-mole'
+  } else if (timer < 10) {
+    classes = 'mole fast-mole'
+  } else {
+    classes = 'mole medium-mole'
+  }
+
+  return <img
+    src={`src/assets/${character}.jpg`}
+    alt={character}
+    className={classes}
+    onAnimationEnd={onAnimationEnd}
+    onClick={onClick}/>
 }

@@ -31,19 +31,15 @@ function App() {
 
   // define functions that trigger some effects
 
-  const handleScore = (e) => {
-    const scoreToAdd = GAMEDATAS.filter((data) => data.character === e.target.alt)[0].points
-    console.log(e.target.parent)
-    setScore(score + scoreToAdd)
-    // TODO: remove the kicked Mole
-  }
-
   const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+    let newArray = [...array]
+    while (newArray.toString() == array.toString()) {
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
     }
-    return array
+    return newArray
   }
 
   const startGame = () => {
@@ -53,6 +49,19 @@ function App() {
     setScore(0)
     setMoles(shuffleArray(moles))
   }
+
+  const handleScore = (e) => {
+    const scoreToAdd = GAMEDATAS.filter((data) => data.character === e.target.alt)[0].points
+    setScore(score + scoreToAdd)
+    setMoles(shuffleArray(moles))
+  }
+
+  const reRunMoles = () => {
+    console.log('onAnimationEnd')
+    const copyMoles = moles
+    setMoles(shuffleArray(copyMoles))
+  }
+
 
   // Return some JSX
 
@@ -65,8 +74,10 @@ function App() {
       gameStarted={gameStarted}
       />
     <Playground
+      timer={timer}
       moles={moles}
       onClick={handleScore}
+      onAnimationEnd={reRunMoles}
       gameStarted={gameStarted}
       gameDatas={GAMEDATAS}
       />

@@ -49,8 +49,19 @@
       height: 10vh;
       aspect-ratio: 1/1;
       border-radius: 50%;
-
-      animation: grow-and-hide 5s forwards;
     }
+
+    .slow-mole {
+      animation: grow-and-hide 4s forwards;
+    }
+
+    .medium-mole {
+      animation: grow-and-hide 2.5s forwards;
+    }
+
+    .fast-mole {
+      animation: grow-and-hide 1.5s forwards;
+    }
+
   }
 }
