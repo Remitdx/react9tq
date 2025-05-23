@@ -1,6 +1,7 @@
 @keyframes grow-and-hide {
-  0%, 100% {scale: 0; }
-  50% {scale: 1.4; }
+  0% {scale: 0.25; }
+  55% {scale: 1; }
+  100% {scale: 0;}
 }
 
 #root {
@@ -8,7 +9,7 @@
 }
 
 .rules {
-  min-height: calc(48vh + 7.5rem);
+  min-height: calc(45vh + 6rem);
   background-color: rgb(176, 209, 238);
   border-radius: 1rem;
   display: flex;
@@ -26,7 +27,7 @@
 
 .playground {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   background-color: rgb(176, 209, 238);
   padding: 1.5rem;
@@ -35,7 +36,7 @@
   .tile {
     margin: 0 auto;
     position: relative;
-    height: 12vh;
+    height: 15vh;
     aspect-ratio: 1/1;
     background-color: rgb(91, 91, 91);
     border-radius: 50%;
@@ -44,11 +45,12 @@
     .mole {
       scale: 0;
       position: absolute;
-      top: calc(50% - 5vh);
-      left: calc(50% - 5vh);
-      height: 10vh;
+      top: calc(50% - 9vh);
+      left: calc(50% - 9vh);
+      height: 18vh;
       aspect-ratio: 1/1;
       border-radius: 50%;
+      cursor: pointer;
     }
 
     .slow-mole {

@@ -1,13 +1,16 @@
 import { Rules } from './Rules'
 import { Tile } from './Tile'
+import { Results } from './Results'
 
-export function Playground({timer, moles, gameDatas, gameStarted, onClick, onAnimationEnd}) {
+export function Playground({score, moles, gameDatas, isGameOver, isGameStarted, onClick, onAnimationEnd}) {
 
-  if (gameStarted && timer > 0)
+  if (isGameOver) {
+    return <Results score={score}/>
+  }
+  else if (isGameStarted)
     return <div className="playground">
       {moles.map((_,i) =>
         <Tile
-          timer={timer}
           mole={moles[i]}
           key={i}
           onClick={onClick}
@@ -15,9 +18,6 @@ export function Playground({timer, moles, gameDatas, gameStarted, onClick, onAni
           gameDatas={gameDatas}>
         </Tile>)}
     </div>
-  else if (timer < 0) {
-    return <Results/>
-  }
   else {
     return <Rules/>
   }

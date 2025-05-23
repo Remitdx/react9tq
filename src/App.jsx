@@ -4,7 +4,6 @@ import { Playground } from './components/Playground'
 import { ScoreBoardArea } from './components/ScoreBoardArea'
 
 function App() {
-
   // define constants
 
   const GAMEDATAS = [
@@ -23,9 +22,9 @@ function App() {
 
   // define variables and setters
 
-  const [moles, setMoles] = useState([false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false])
-  const [gameStarted, setGameStarted] = useState(false)
-  const [timer, setTimer] = useState('-')
+  const [moles, setMoles] = useState([true,false,false,false,false,false,false,false,false])
+  const [isGameStarted, setIsGameStarted] = useState(false)
+  const [isGameOver, setIsGameOver] = useState(false)
   const [score, setScore] = useState('-')
   const [buttonValue, setButtonValue] = useState('Start Game')
 
@@ -43,9 +42,8 @@ function App() {
   }
 
   const startGame = () => {
-    setGameStarted(true)
+    setIsGameStarted(true)
     setButtonValue("Game running")
-    setTimer(30)
     setScore(0)
     setMoles(shuffleArray(moles))
   }
@@ -57,7 +55,6 @@ function App() {
   }
 
   const reRunMoles = () => {
-    console.log('onAnimationEnd')
     const copyMoles = moles
     setMoles(shuffleArray(copyMoles))
   }
@@ -70,16 +67,17 @@ function App() {
       onClick={startGame}
       buttonValue={buttonValue}
       score={score}
-      timer={timer}
-      gameStarted={gameStarted}
+      isGameStarted={isGameStarted}
+      setIsGameOver={setIsGameOver}
       />
     <Playground
-      timer={timer}
       moles={moles}
       onClick={handleScore}
       onAnimationEnd={reRunMoles}
-      gameStarted={gameStarted}
+      isGameOver={isGameOver}
+      isGameStarted={isGameStarted}
       gameDatas={GAMEDATAS}
+      score={score}
       />
   </div>
 }
