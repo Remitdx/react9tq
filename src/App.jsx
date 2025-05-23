@@ -26,7 +26,6 @@ function App() {
   const [isGameStarted, setIsGameStarted] = useState(false)
   const [isGameOver, setIsGameOver] = useState(false)
   const [score, setScore] = useState('-')
-  const [buttonValue, setButtonValue] = useState('Start Game')
 
   // define functions that trigger some effects
 
@@ -43,7 +42,6 @@ function App() {
 
   const startGame = () => {
     setIsGameStarted(true)
-    setButtonValue("Game running")
     setScore(0)
     setMoles(shuffleArray(moles))
   }
@@ -65,9 +63,9 @@ function App() {
   return <div className="container">
     <ScoreBoardArea
       onClick={startGame}
-      buttonValue={buttonValue}
       score={score}
       isGameStarted={isGameStarted}
+      isGameOver={isGameOver}
       setIsGameOver={setIsGameOver}
       />
     <Playground

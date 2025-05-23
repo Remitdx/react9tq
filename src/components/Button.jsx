@@ -1,3 +1,5 @@
-export function Button({buttonValue, onClick, isGameStarted}) {
-  return <button disabled={isGameStarted} onClick={onClick}>{buttonValue}</button>
+export function Button({onClick, isGameStarted, isGameOver}) {
+  const text = isGameStarted && !isGameOver ? "Game running" : "Start Game"
+
+  return <button disabled={isGameStarted} onClick={onClick}>{text}</button>
 }

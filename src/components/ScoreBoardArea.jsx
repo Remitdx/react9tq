@@ -3,7 +3,7 @@ import { Button } from './Button'
 import { Score } from './Score'
 import { Timer } from './Timer'
 
-export function ScoreBoardArea({buttonValue, score, onClick, isGameStarted, setIsGameOver}) {
+export function ScoreBoardArea({score, onClick, isGameOver, isGameStarted, setIsGameOver}) {
 
   const [secondLeft, setSecondLeft] = useState(30)
 
@@ -43,7 +43,7 @@ export function ScoreBoardArea({buttonValue, score, onClick, isGameStarted, setI
     <Button
       onClick={onClick}
       isGameStarted={isGameStarted}
-      buttonValue={buttonValue}>
+      isGameOver={isGameOver}>
     </Button>
     <Score
       score={score}>
