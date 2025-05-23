@@ -9,7 +9,7 @@
 }
 
 .rules {
-  min-height: calc(45vh + 6rem);
+  min-height: calc(30vh + 6rem);
   background-color: rgb(176, 209, 238);
   border-radius: 1rem;
   display: flex;
@@ -36,7 +36,7 @@
   .tile {
     margin: 0 auto;
     position: relative;
-    height: 15vh;
+    height: 10vh;
     aspect-ratio: 1/1;
     background-color: rgb(91, 91, 91);
     border-radius: 50%;
@@ -45,9 +45,9 @@
     .mole {
       scale: 0;
       position: absolute;
-      top: calc(50% - 9vh);
-      left: calc(50% - 9vh);
-      height: 18vh;
+      top: calc(50% - 6vh);
+      left: calc(50% - 6vh);
+      height: 12vh;
       aspect-ratio: 1/1;
       border-radius: 50%;
       cursor: pointer;
@@ -65,5 +65,25 @@
       animation: grow-and-hide 1.5s forwards;
     }
 
+  }
+}
+
+@media (min-width: 768px) {
+
+  .rules {
+      min-height: calc(45vh + 6rem);
+  }
+
+  .playground {
+    .tile {
+      height: 15vh;
+
+      .mole {
+        top: calc(50% - 9vh);
+        left: calc(50% - 9vh);
+        height: 18vh;
+        cursor: pointer;
+      }
+    }
   }
 }
