@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: './build',
-    assetsDir: './src/',
+    assetsDir: './',
   },
-  base: '/react9tq'
+  base: '/react9tq/'
 })
