@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Button } from './Button'
-import { Score } from './Score'
-import { Timer } from './Timer'
+import { Button } from './components/Button'
+import { Score } from './components/Score'
+import { Timer } from './components/Timer'
 
 export function ScoreBoardArea({score, onClick, isGameOver, isGameStarted, setIsGameOver}) {
 
-  const [secondLeft, setSecondLeft] = useState(30)
+  const [secondLeft, setSecondLeft] = useState(7)
 
   useEffect(() => {
     if (!isGameStarted ){

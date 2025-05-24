@@ -4,9 +4,19 @@
   100% {scale: 0;}
 }
 
+@keyframes appear {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 #root {
   width: 100%;
 }
+
+.not-visible{opacity: 0;}
+.welcome-h1 {animation: 1s appear 0.75s forwards;}
+.welcome-h2 {animation: 1s appear forwards;}
+.welcome-btn {animation: 1s appear 1.5s forwards;}
 
 .rules {
   min-height: calc(30vh + 6rem);

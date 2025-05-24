@@ -1,5 +1,5 @@
 import { Rules } from './Rules'
-import { Tile } from './Tile'
+import { Tile } from './components/Tile'
 import { Results } from './Results'
 
 export function Playground({score, moles, gameDatas, isGameOver, isGameStarted, onClick, onAnimationEnd}) {
@@ -7,7 +7,7 @@ export function Playground({score, moles, gameDatas, isGameOver, isGameStarted, 
   if (isGameOver) {
     return <Results score={score}/>
   }
-  else if (isGameStarted)
+  else if (isGameStarted){
     return <div className="playground">
       {moles.map((_,i) =>
         <Tile
@@ -18,6 +18,8 @@ export function Playground({score, moles, gameDatas, isGameOver, isGameStarted, 
           gameDatas={gameDatas}>
         </Tile>)}
     </div>
+  }
+
   else {
     return <Rules/>
   }
