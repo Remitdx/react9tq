@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react'
 import './App.css'
+import '../public/fonts/HarryP-MVZ6w.ttf'
 import { Game } from './games/Game'
 import { Welcome } from './welcomes/Welcome'
 

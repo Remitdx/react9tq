@@ -9,16 +9,29 @@
   100% {opacity: 1;}
 }
 
+@font-face {
+  font-family: "HarryPotter";
+  src: url("../public/fonts/HarryP-MVZ6w.ttf") format("truetype");
+}
+
 #root {
   width: 100%;
 }
 
 .not-visible{opacity: 0;}
-.welcome-h1 {animation: 1s appear 0.75s forwards;}
 .welcome-h2 {animation: 1s appear forwards;}
+.welcome-h1 {
+  font-family: "HarryPotter";
+  animation: 1s appear 0.75s forwards;
+}
 .welcome-btn {animation: 1s appear 1.5s forwards;}
 
 .rules {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/images/hp-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: "HarryPotter";
+  color: blanchedalmond;
   min-height: calc(30vh + 6rem);
   background-color: rgb(176, 209, 238);
   border-radius: 1rem;
