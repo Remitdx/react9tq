@@ -21,10 +21,10 @@ export function Game() {
 
   // audio elements
 
-  const slapAudio = new Audio(`${import.meta.env.BASE_URL}src/assets/sounds/slap.mp3`)
-  const ouchAudio = new Audio(`${import.meta.env.BASE_URL}src/assets/sounds/ouch.mp3`)
-  const menuAudio = new Audio(`${import.meta.env.BASE_URL}src/assets/sounds/menu.mp3`)
-  const fightAudio = new Audio(`${import.meta.env.BASE_URL}src/assets/sounds/fight.mp3`)
+  const slapAudio = new Audio(`${import.meta.env.BASE_URL}sounds/slap.mp3`)
+  const ouchAudio = new Audio(`${import.meta.env.BASE_URL}sounds/ouch.mp3`)
+  const menuAudio = new Audio(`${import.meta.env.BASE_URL}sounds/menu.mp3`)
+  const fightAudio = new Audio(`${import.meta.env.BASE_URL}sounds/fight.mp3`)
   menuAudio.loop = true
   fightAudio.loop = true
   fightAudio.volume = 0.1
