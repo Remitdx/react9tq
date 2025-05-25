@@ -5,7 +5,7 @@ import { Timer } from './components/Timer'
 
 export function ScoreBoardArea({score, onClick, isGameOver, isGameStarted, setIsGameOver}) {
 
-  const [secondLeft, setSecondLeft] = useState(7)
+  const [secondLeft, setSecondLeft] = useState(30)
 
   useEffect(() => {
     if (!isGameStarted ){
