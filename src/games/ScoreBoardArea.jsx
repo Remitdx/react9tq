@@ -3,7 +3,7 @@ import { Button } from './components/Button'
 import { Score } from './components/Score'
 import { Timer } from './components/Timer'
 
-export function ScoreBoardArea({score, onClick, isGameOver, isGameStarted, setIsGameOver}) {
+export function ScoreBoardArea({buttonValue, setButtonValue, score, onClick, isGameOver, isGameStarted, setIsGameOver}) {
 
   const [secondLeft, setSecondLeft] = useState(30)
 
@@ -30,9 +30,10 @@ export function ScoreBoardArea({score, onClick, isGameOver, isGameStarted, setIs
       return undefined // hack to avoid 1st trigger at 1st page load
     }
     if (secondLeft == 0){
-      setIsGameOver(true)
+      setIsGameOver(true);
+      setButtonValue("Rejouer");
     }
-  }, [isGameStarted, secondLeft, setIsGameOver])
+  }, [isGameStarted, secondLeft, setButtonValue, setIsGameOver])
 
   const timer = isGameStarted ? secondLeft : '-'
 
@@ -41,6 +42,7 @@ export function ScoreBoardArea({score, onClick, isGameOver, isGameStarted, setIs
       timer={timer}>
     </Timer>
     <Button
+      buttonValue={buttonValue}
       onClick={onClick}
       isGameStarted={isGameStarted}
       isGameOver={isGameOver}>

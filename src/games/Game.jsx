@@ -36,6 +36,7 @@ export function Game() {
   const [isGameStarted, setIsGameStarted] = useState(false)
   const [isGameOver, setIsGameOver] = useState(false)
   const [score, setScore] = useState('-')
+  const [buttonValue, setButtonValue] = useState('Jouer')
 
   // define functions that trigger some effects
 
@@ -52,8 +53,10 @@ export function Game() {
 
   const startGame = () => {
     setIsGameStarted(true)
+    setIsGameOver(false)
     setScore(0)
     setMoles(shuffleArray(moles))
+    setButtonValue("En cours")
   }
 
   const handleScore = (e) => {
@@ -72,11 +75,13 @@ export function Game() {
 
   return <div className="container">
     <ScoreBoardArea
+      setButtonValue={setButtonValue}
       onClick={startGame}
       score={score}
       isGameStarted={isGameStarted}
       isGameOver={isGameOver}
       setIsGameOver={setIsGameOver}
+      buttonValue={buttonValue}
     />
     <Playground
       moles={moles}

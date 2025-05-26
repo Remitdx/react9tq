@@ -1,5 +1,5 @@
 export function Timer({ timer }) {
   return <div>
-    Time : {timer}
+    Temps : {timer}
   </div>
 }

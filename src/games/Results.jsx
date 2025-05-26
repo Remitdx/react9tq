@@ -1,9 +1,17 @@
 export function Results({score}) {
 
-  const sentence = score > 0 ? "Bien joué ! La voie 9 trois quart est ouverte, Fonce !" : "Perdu !"
+  let sentence = ""
+
+  if (score > 750) {
+    sentence = "La voie 9 trois quart est ouverte, Fonce !"
+  } else if (score  < 0) {
+    sentence = "Les forces du mal sont victorieuses !"
+  } else {
+    sentence = "Aucun camp ne sort vainqueur de cette bataille !"
+  }
 
   return <div className="rules">
-    <h1>{score} points</h1>
-    <h3>{sentence}</h3>
+    <p>{score} points</p>
+    <p>{sentence}</p>
   </div>
 }

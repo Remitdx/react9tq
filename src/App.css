@@ -1,6 +1,6 @@
 @keyframes grow-and-hide {
   0% {scale: 0.25; }
-  55% {scale: 1; }
+  60% {scale: 1; }
   100% {scale: 0;}
 }
 
@@ -19,8 +19,12 @@
 }
 
 .not-visible{opacity: 0;}
-.welcome-h2 {animation: 1s appear forwards;}
-.welcome-h1 {
+.welcome-remi {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  animation: 1s appear forwards;
+}
+.welcome-9tq {
+  font-size: clamp(3.5rem, 8.5vw, 6rem);
   font-family: "HarryPotter";
   animation: 1s appear 0.75s forwards;
 }
@@ -39,6 +43,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  p {
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+  }
 }
 
 .score-board-area {
@@ -74,20 +82,8 @@
       aspect-ratio: 1/1;
       border-radius: 50%;
       cursor: pointer;
+      animation: grow-and-hide 1.75s forwards;
     }
-
-    .slow-mole {
-      animation: grow-and-hide 4s forwards;
-    }
-
-    .medium-mole {
-      animation: grow-and-hide 2.5s forwards;
-    }
-
-    .fast-mole {
-      animation: grow-and-hide 1.5s forwards;
-    }
-
   }
 }
 
