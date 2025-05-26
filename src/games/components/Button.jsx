@@ -1,4 +1,5 @@
-export function Button({buttonValue, onClick, isGameStarted, isGameOver}) {
-
-  return <button className="btn-dark" disabled={isGameStarted && !isGameOver} onClick={onClick}>{buttonValue}</button>
+export function Button({onClick, isGameStarted}) {
+  if (!isGameStarted) {
+    return <button className="btn-dark" onClick={onClick}>Jouer</button>
+  }
 }

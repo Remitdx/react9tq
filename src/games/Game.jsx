@@ -23,11 +23,6 @@ export function Game() {
 
   const slapAudio = new Audio(`${import.meta.env.BASE_URL}sounds/slap.mp3`)
   const ouchAudio = new Audio(`${import.meta.env.BASE_URL}sounds/ouch.mp3`)
-  const menuAudio = new Audio(`${import.meta.env.BASE_URL}sounds/menu.mp3`)
-  const fightAudio = new Audio(`${import.meta.env.BASE_URL}sounds/fight.mp3`)
-  menuAudio.loop = true
-  fightAudio.loop = true
-  fightAudio.volume = 0.1
   slapAudio.volume = 0.3
 
   // define variables and setters
@@ -36,9 +31,8 @@ export function Game() {
   const [isGameStarted, setIsGameStarted] = useState(false)
   const [isGameOver, setIsGameOver] = useState(false)
   const [score, setScore] = useState('-')
-  const [buttonValue, setButtonValue] = useState('Jouer')
 
-  // define functions that trigger some effects
+  // define functions
 
   const shuffleArray = (array) => {
     let newArray = [...array]
@@ -52,18 +46,17 @@ export function Game() {
   }
 
   const startGame = () => {
-    setIsGameStarted(true)
-    setIsGameOver(false)
-    setScore(0)
-    setMoles(shuffleArray(moles))
-    setButtonValue("En cours")
+    setIsGameStarted(true);
+    setIsGameOver(false);
+    setScore(0);
+    setMoles(shuffleArray(moles));
   }
 
   const handleScore = (e) => {
     const scoreToAdd = GAMEDATAS.filter((data) => data.character === e.target.alt)[0].points
     scoreToAdd > 0 ? slapAudio.play() : ouchAudio.play()
-    setScore(score + scoreToAdd)
-    setMoles(shuffleArray(moles))
+    setScore(score + scoreToAdd);
+    setMoles(shuffleArray(moles));
   }
 
   const reRunMoles = () => {
@@ -71,17 +64,14 @@ export function Game() {
     setMoles(shuffleArray(copyMoles))
   }
 
-  // Return some JSX
+  // Return JSX
 
   return <div className="container">
     <ScoreBoardArea
-      setButtonValue={setButtonValue}
       onClick={startGame}
       score={score}
       isGameStarted={isGameStarted}
-      isGameOver={isGameOver}
       setIsGameOver={setIsGameOver}
-      buttonValue={buttonValue}
     />
     <Playground
       moles={moles}
