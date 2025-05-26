@@ -10,8 +10,10 @@ export function Results({score}) {
     sentence = "Aucun camp ne sort vainqueur de cette bataille !"
   }
 
+  const points = score == 0 ? "point" : "points"
+
   return <div className="rules">
-    <p>{score} points</p>
+    <p>{score} {points}</p>
     <p>{sentence}</p>
   </div>
 }
